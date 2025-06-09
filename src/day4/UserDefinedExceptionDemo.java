@@ -15,15 +15,15 @@ public class UserDefinedExceptionDemo {
 		if(quantity>=500)
 			System.out.println("Order Accepted");
 		else
-			throw new LowQuantityException("Please enter qty > 500");
+			throw new ArithmeticException("Please enter qty > 500");//throw is used in conjuction with custom exception
 		}
 		catch(InputMismatchException e1)
 		{
 			System.out.println("Please enter valid integer value");
 		}
-		catch(LowQuantityException e2)
+		catch(ArithmeticException e2)
 		{
-			System.out.println(e2.getMessage());
+			System.out.println(e2.getMessage());  // / by zero
 		}
 		finally
 		{
@@ -31,5 +31,6 @@ public class UserDefinedExceptionDemo {
 		}
 
 	}
-
 }
+/*virat  vi rat
+InvalidNameException*/
