@@ -13,7 +13,6 @@ public class HashMapDemo {
 		employees.put("Ben", 900);
 		employees.put("Chris", 850);
 		
-		
 		System.out.println(employees);
 		System.out.println(employees.get("Alice"));
 		
