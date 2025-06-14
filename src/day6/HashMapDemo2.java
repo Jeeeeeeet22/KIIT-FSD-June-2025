@@ -28,11 +28,11 @@ public class HashMapDemo2 {
 		std10.put("second", new Student(19,"Ben",86.5));
 		std10.put("third", new Student(36,"Chris",81.5));
 		
-		List<Map<String,Student>> schoolResuls=new ArrayList();
 		
+		List<Map<String,Student>> schoolResuls=new ArrayList();
 		schoolResuls.add(std8);
 		schoolResuls.add(std9);
-		schoolResuls.add(std10);
+		schoolResuls.add(std10);  
 		
 		//using the schoolResult, display toppers name from each class
 		System.out.println("Topper Names");
