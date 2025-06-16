@@ -17,16 +17,24 @@ public class InsertUsingStatement {
 		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/kiitdb","root","");
 		
 		Statement st=con.createStatement();
-		String query="insert into emp values(103,'Chris',900.00)";
+		String query1="insert into emp values(104,'David',900.00)";  //return 1 delete from emp where dname like 'IT' return 5
+		String query2="insert into emp values(105,'Elcid',850.00)";  //return 1
+		String query3="insert into emp values(106,'Frank',750.00)";  //return 1
+		st.addBatch(query1);
+		st.addBatch(query2);
+		st.addBatch(query3);
 		
-		int rows=st.executeUpdate(query);
-		if(rows>0)
-		System.out.println("Record Inserted");
+		// 0 1 2
+		// 1 1 1
+		int rows[]=st.executeBatch();
+		if(rows.length>0)
+		System.out.println(rows.length +"Records Inserted");
 		else
 		System.out.println("Error In Insertion");
 		
 		st.close();
 		con.close();
+		
 		}
 		catch(SQLException e1)
 		{
